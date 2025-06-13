@@ -21,7 +21,7 @@ export class Search<T> {
 
   private formatValue(section: string, value: any): any {
     if (value instanceof Date) {
-      let adjustedDate = new Date(value); // Hacemos copia para no mutar el original
+      let adjustedDate = new Date(value);
 
       if (section === 'from') {
         adjustedDate = set(adjustedDate, {
@@ -39,7 +39,7 @@ export class Search<T> {
         });
       }
 
-      return DateUtils.convertToUTCString(adjustedDate); // Ya devuelves string UTC limpio
+      return DateUtils.convertToUTCString(adjustedDate);
     }
     return value;
   }
@@ -57,14 +57,12 @@ export class Search<T> {
       }
     }
 
-    // In para listas
     for (const key in this.in) {
       if (this.in[key]?.length) {
         params[`in.${key}`] = this.in[key].join(',');
       }
     }
 
-    // Pagination and sorting
     params['sort'] = this.sort || 'asc';
     params['pageNumber'] = this.pageNumber;
     params['pageSize'] = this.pageSize;
