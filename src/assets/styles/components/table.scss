@@ -1,0 +1,40 @@
+@import "../variables";
+
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: $white;
+  border-radius: $border-radius;
+  //@include box-shadow;
+
+  th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid $surface-600;
+  }
+
+  thead {
+    background-color: $bluegray-100;
+    color: $bluegray-600;
+
+    th {
+      font-weight: bold;
+    }
+  }
+
+  tbody tr:hover {
+    background-color: lighten($secondary, 35%);
+  }
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.tabla-vacia {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  color: $bluegray-600;
+}

@@ -1,0 +1,23 @@
+<div class="dialog-container-small flex flex-column">
+  <div class="dialog-header flex justify-content-between align-items-center align-content-center">
+    <div id="header-container" class="flex justify-content-start align-items-center w-full">
+      <span class="font-bold line-height-2">
+        <h2 class="font-semibold mb-0">Confirmación de Eliminación</h2>
+      </span>
+    </div>
+    <div class="flex justify-content-end">
+      <button type="button" class="btn-rounded" (click)="cerrar()">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+  </div>
+  <div class="dialog-body">
+    ¿Estás seguro de eliminar el producto con id: {{producto.id}}?
+  </div>
+  <div class="dialog-footer">
+    <div class="flex justify-content-center align-items-center">
+      <button type="button" class="btn btn--outline mr-6" (click)="cerrar()">Cancelar</button>
+      <button type="button" class="btn btn--warning" (click)="eliminar()">Confirmar</button>
+    </div>
+  </div>
+</div>

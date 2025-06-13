@@ -1,0 +1,23 @@
+@use "sass:meta";
+@use "../variables" as *;
+
+@mixin syntax-colors($args...) {
+  @each $name, $color in meta.keywords($args) {
+    html .bg-#{$name} {
+      background-color: $color !important;
+    }
+
+    html .text-#{$name} {
+      color: $color !important;
+    }
+  }
+}
+
+@include syntax-colors(
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $warning: $warning,
+  $error: $error,
+  $white: $white
+);

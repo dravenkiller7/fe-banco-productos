@@ -1,0 +1,57 @@
+@import "../variables";
+
+.btn {
+  padding: 0.5em 1em;
+  border-radius: $border-radius;
+  font-weight: bold;
+  text-align: center;
+
+  &--primary {
+    border: 1px solid $secondary;
+    background-color: $secondary;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($secondary, 10%);
+    }
+  }
+
+  &--warning {
+    border: 1px solid $warning;
+    background-color: $warning;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($warning, 10%);
+    }
+  }
+
+  &--danger {
+    border: 1px solid $error;
+    background-color: $error;
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($error, 10%);
+    }
+  }
+
+  &--outline {
+    background: none;
+    border: 2px solid $secondary;
+    color: $secondary;
+    cursor: pointer;
+  }
+}
+
+.btn-rounded {
+  background: none;
+  border: 1px solid $primary;
+  cursor: pointer;
+  border-radius: 2rem;
+  height: 2.25rem;
+  width: 2.25rem;
+}

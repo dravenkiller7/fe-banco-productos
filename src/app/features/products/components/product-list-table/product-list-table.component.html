@@ -1,0 +1,38 @@
+<table class="tabla-productos">
+  <thead>
+  <tr>
+    <th>Logo</th>
+    <th>Nombre del producto</th>
+    <th>Descripción</th>
+    <th>Fecha Liberación</th>
+    <th>Fecha Revisión</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="productos.length > 0; else sinResultados">
+  <tr *ngFor="let producto of productos">
+    <td><img [src]="producto.logo" alt="logo" width="48"></td>
+    <td>{{ producto.nombre }}</td>
+    <td>{{ producto.descripcion }}</td>
+    <td>{{ producto.fechaLiberacion | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ producto.fechaRevision | date: 'dd/MM/yyyy' }}</td>
+    <td>
+      <button type="button" class="btn-rounded" [cdkMenuTriggerFor]="accountantChangeBusiness">
+        <i class="pi pi-ellipsis-v"></i>
+      </button>
+      <ng-template #accountantChangeBusiness>
+        <app-menu-overlay [product]="producto" [menuItems]="productMenuItems"></app-menu-overlay>
+      </ng-template>
+    </td>
+  </tr>
+  </tbody>
+  <ng-template #sinResultados>
+    <tbody>
+    <tr>
+      <td colspan="6" class="tabla-vacia">
+        No hay productos financieros disponibles.
+      </td>
+    </tr>
+    </tbody>
+  </ng-template>
+</table>

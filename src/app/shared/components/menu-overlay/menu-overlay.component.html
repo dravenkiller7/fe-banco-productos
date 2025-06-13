@@ -1,0 +1,18 @@
+<div cdkMenu class="cdk-overlay-menu shadow-5">
+  <ul class="cdk-overlay-menu-content">
+    <li *ngFor="let item of menuItems" cdkMenuItem class="cdk-overlay-menu-link ">
+      <a class="cdk-overlay-menu-item"
+         *ngIf="!item.routerLink"
+         (click)="executeCommand(item)">
+        <i class="{{item.icon}} cdk-overlay-menu-item-icon"></i>
+        <span class="cdk-overlay-menu-item-label">{{ item.label! }}</span>
+      </a>
+      <a class="cdk-overlay-menu-item"
+         *ngIf="item.routerLink"
+         [routerLink]="item.routerLink">
+        <i class="{{item.icon}} cdk-overlay-menu-item-icon"></i>
+        <span class="cdk-overlay-menu-item-label">{{ item.label! }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

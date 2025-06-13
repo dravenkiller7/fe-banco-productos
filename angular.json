@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/styles/main.scss"
             ],
             "scripts": []
           },
@@ -53,7 +54,8 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -65,7 +67,8 @@
               "buildTarget": "banco-productos:build:production"
             },
             "development": {
-              "buildTarget": "banco-productos:build:development"
+              "buildTarget": "banco-productos:build:development",
+              "proxyConfig": "proxy.conf-local.json"
             }
           },
           "defaultConfiguration": "development"

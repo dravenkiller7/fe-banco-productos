@@ -1,0 +1,111 @@
+<form [formGroup]="form" (ngSubmit)="enviar()">
+  <div class="form-grid">
+    <!-- Columna 1 -->
+    <div class="form-col">
+      <!-- ID -->
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input
+          id="id"
+          type="text"
+          class="input-text"
+          formControlName="id"
+          [ngClass]="(modoEdicion) ? 'input-disabled' : ''"
+          [readonly]="modoEdicion"
+          [class.input-error]="form.get('id')?.invalid && form.get('id')?.touched"
+        />
+        <div class="form-error" *ngIf="form.get('id')?.touched && form.get('id')?.invalid">
+          <small *ngIf="form.get('id')?.errors?.['required']">Requerido</small>
+          <small *ngIf="form.get('id')?.errors?.['minlength']">Mínimo 3 caracteres</small>
+          <small *ngIf="form.get('id')?.errors?.['maxlength']">Máximo 10 caracteres</small>
+          <small *ngIf="form.get('id')?.errors?.['idDuplicado']">ID ya existe</small>
+        </div>
+      </div>
+
+      <!-- Descripción -->
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input
+          id="descripcion"
+          type="text"
+          class="input-text"
+          formControlName="descripcion"
+          [class.input-error]="form.get('descripcion')?.invalid && form.get('descripcion')?.touched"
+        />
+        <div class="form-error" *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.invalid">
+          <small *ngIf="form.get('descripcion')?.errors?.['required']">Requerido</small>
+          <small *ngIf="form.get('descripcion')?.errors?.['minlength']">Mínimo 10 caracteres</small>
+          <small *ngIf="form.get('descripcion')?.errors?.['maxlength']">Máximo 200 caracteres</small>
+        </div>
+      </div>
+
+      <!-- Fecha Liberación -->
+      <div class="form-group">
+        <label for="fechaLiberacion">Fecha de Liberación</label>
+        <input
+          id="fechaLiberacion"
+          type="date"
+          class="input-text"
+          formControlName="fechaLiberacion"
+          [class.input-error]="form.get('fechaLiberacion')?.invalid && form.get('fechaLiberacion')?.touched"
+        />
+        <div class="form-error" *ngIf="form.get('fechaLiberacion')?.touched && form.get('fechaLiberacion')?.invalid">
+          <small *ngIf="form.get('fechaLiberacion')?.errors?.['required']">Requerido</small>
+          <small *ngIf="form.get('fechaLiberacion')?.errors?.['fechaInvalida']">Debe ser mayor o igual a hoy</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="form-col">
+      <!-- Nombre -->
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="input-text"
+          formControlName="nombre"
+          [class.input-error]="form.get('nombre')?.invalid && form.get('nombre')?.touched"
+        />
+        <div class="form-error" *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid">
+          <small *ngIf="form.get('nombre')?.errors?.['required']">Requerido</small>
+          <small *ngIf="form.get('nombre')?.errors?.['minlength']">Mínimo 5 caracteres</small>
+          <small *ngIf="form.get('nombre')?.errors?.['maxlength']">Máximo 100 caracteres</small>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="form-group">
+        <label for="logo">Logo (URL)</label>
+        <input
+          id="logo"
+          type="text"
+          class="input-text"
+          formControlName="logo"
+          [class.input-error]="form.get('logo')?.invalid && form.get('logo')?.touched"
+        />
+        <div class="form-error" *ngIf="form.get('logo')?.touched && form.get('logo')?.invalid">
+          <small *ngIf="form.get('logo')?.errors?.['required']">Requerido</small>
+        </div>
+      </div>
+
+      <!-- Fecha Revisión (deshabilitada) -->
+      <div class="form-group">
+        <label for="fechaRevision">Fecha de Revisión</label>
+        <input
+          id="fechaRevision"
+          type="date"
+          formControlName="fechaRevision"
+          [disabled]="true"
+          class="input-disabled input-text"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-content-center align-items-center mt-3">
+    <button type="button" class="btn btn--outline mr-6" (click)="limpiar()">Reiniciar</button>
+    <button type="submit" class="btn btn--warning">{{ modoEdicion ? 'Actualizar' : 'Agregar' }}</button>
+  </div>
+</form>

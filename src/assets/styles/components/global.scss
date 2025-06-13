@@ -1,0 +1,91 @@
+@import "../variables";
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: $primary;
+  }
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resultado-texto {
+  font-size: 0.95rem;
+  color: $bluegray-600;
+}
+
+.input-text {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $surface-800;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $secondary;
+    box-shadow: 0 0 0 2px rgba($secondary, 0.2);
+  }
+}
+
+.select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $surface-800;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  background-color: $white;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $secondary;
+    box-shadow: 0 0 0 2px rgba($secondary, 0.2);
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-disabled {
+  background-color: $bluegray-100;
+  border: 1px solid $bluegray-600;
+  color: $bluegray-600;
+  cursor: not-allowed;
+}
+
+.input-error {
+  border-color: $error;
+  background-color: lighten($error, 35%);
+}
+
+.form-error {
+  color: $error;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+
+  small {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+}

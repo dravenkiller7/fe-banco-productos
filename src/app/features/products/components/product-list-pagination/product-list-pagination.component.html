@@ -1,0 +1,20 @@
+<div class="flex justify-content-between align-items-center gap-3">
+  <div class="resultado-texto">
+    Mostrando {{ resultadosMostrados }} de {{ totalResultados }} resultados
+  </div>
+  <div class="form-group">
+    <div>
+      <label class="mr-2" for="cantidad">Cantidad por página</label>
+      <select
+        id="cantidad"
+        class="select"
+        (change)="onChangePage($event)"
+      >
+        <option *ngFor="let cantidad of opciones" [value]="cantidad">
+          {{ cantidad }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+

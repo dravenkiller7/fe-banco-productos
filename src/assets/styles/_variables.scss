@@ -1,0 +1,56 @@
+// custom
+$primary: #2c3e50;
+$secondary: #3498db;
+$accent: #e67e22;
+$error: #e74c3c;
+$warning: #f8c20a;
+$success: #2ecc71;
+$white: #ffffff;
+
+$text-color: rgba(0, 0, 0, 0.87);
+$text-color-secondary: rgba(0, 0, 0, 0.6);
+
+// Surface
+$surface-ground: #fafafa;
+$surface-section: #f8fafc;
+$surface-card: #ffffff;
+$surface-overlay: #ffffff;
+$surface-border: rgba(0, 0, 0, .12);
+$surface-loader: $primary;
+$surface-menu: #ffffff;
+$surface-hover: rgba(0, 0, 0, 0.04);
+
+$surface-0: #ffffff;
+$surface-50: #FAFAFA;
+$surface-100: #F5F5F5;
+$surface-200: #EEEEEE;
+$surface-300: #E0E0E0;
+$surface-400: #BDBDBD;
+$surface-500: #9E9E9E;
+$surface-600: #757575;
+$surface-700: #616161;
+$surface-800: #424242;
+$surface-900: #212121;
+
+$bluegray-50: #f7f9f9;
+$bluegray-100: #d9e0e3;
+$bluegray-200: #bbc7cd;
+$bluegray-300: #9caeb7;
+$bluegray-400: #7e96a1;
+$bluegray-500: #607d8b;
+$bluegray-600: #526a76;
+$bluegray-700: #435861;
+$bluegray-800: #35454c;
+$bluegray-900: #263238;
+
+$maskbg: rgba(0, 0, 0, 0.32);
+
+// Typography
+$scale: 16px;
+$font-family-base: 'Segoe UI', sans-serif;
+
+// Border radius
+$border-radius: 6px;
+
+// Transition
+$transition-duration:.2s;

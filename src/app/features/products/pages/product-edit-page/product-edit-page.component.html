@@ -1,0 +1,18 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card shadow-3">
+      <div class="flex justify-content-start align-items-center">
+        <h4 class="font-medium text-2xl text-800 my-0">{{ modoEdicion ? 'Editar Producto' : 'Agregar Producto' }}</h4>
+      </div>
+      <hr>
+      <div class="w-full">
+        <app-product-edit-form
+          [idProducto]="idProducto"
+          [modoEdicion]="modoEdicion"
+          (onGuardar)="navegarListado()"
+          (onCancelar)="navegarListado()">
+        </app-product-edit-form>
+      </div>
+    </div>
+  </div>
+</div>
